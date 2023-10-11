@@ -30,24 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvTransaksi = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.foodxyzDataSet = new FoodXYZ.foodxyzDataSet();
-            this.foodxyzDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbltransaksiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbl_transaksiTableAdapter = new FoodXYZ.foodxyzDataSetTableAdapters.tbl_transaksiTableAdapter();
             this.idtransaksiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tgltransaksiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalbayarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iduserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbltransaksiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.foodxyzDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.foodxyzDataSet = new FoodXYZ.foodxyzDataSet();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbl_transaksiTableAdapter = new FoodXYZ.foodxyzDataSetTableAdapters.tbl_transaksiTableAdapter();
             this.dtpFilterFrom = new System.Windows.Forms.DateTimePicker();
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.btnFilter = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaksi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.foodxyzDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.foodxyzDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbltransaksiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.foodxyzDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.foodxyzDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTransaksi
@@ -66,35 +66,6 @@
             this.dgvTransaksi.Name = "dgvTransaksi";
             this.dgvTransaksi.Size = new System.Drawing.Size(722, 173);
             this.dgvTransaksi.TabIndex = 38;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(293, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 45);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Kelola Laporan";
-            // 
-            // foodxyzDataSet
-            // 
-            this.foodxyzDataSet.DataSetName = "foodxyzDataSet";
-            this.foodxyzDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // foodxyzDataSetBindingSource
-            // 
-            this.foodxyzDataSetBindingSource.DataSource = this.foodxyzDataSet;
-            this.foodxyzDataSetBindingSource.Position = 0;
-            // 
-            // tbltransaksiBindingSource
-            // 
-            this.tbltransaksiBindingSource.DataMember = "tbl_transaksi";
-            this.tbltransaksiBindingSource.DataSource = this.foodxyzDataSetBindingSource;
-            // 
-            // tbl_transaksiTableAdapter
-            // 
-            this.tbl_transaksiTableAdapter.ClearBeforeFill = true;
             // 
             // idtransaksiDataGridViewTextBoxColumn
             // 
@@ -121,11 +92,40 @@
             this.iduserDataGridViewTextBoxColumn.HeaderText = "Nama kasir";
             this.iduserDataGridViewTextBoxColumn.Name = "iduserDataGridViewTextBoxColumn";
             // 
+            // tbltransaksiBindingSource
+            // 
+            this.tbltransaksiBindingSource.DataMember = "tbl_transaksi";
+            this.tbltransaksiBindingSource.DataSource = this.foodxyzDataSetBindingSource;
+            // 
+            // foodxyzDataSetBindingSource
+            // 
+            this.foodxyzDataSetBindingSource.DataSource = this.foodxyzDataSet;
+            this.foodxyzDataSetBindingSource.Position = 0;
+            // 
+            // foodxyzDataSet
+            // 
+            this.foodxyzDataSet.DataSetName = "foodxyzDataSet";
+            this.foodxyzDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(301, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(244, 45);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Kelola Laporan";
+            // 
+            // tbl_transaksiTableAdapter
+            // 
+            this.tbl_transaksiTableAdapter.ClearBeforeFill = true;
+            // 
             // dtpFilterFrom
             // 
             this.dtpFilterFrom.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFilterFrom.Location = new System.Drawing.Point(52, 141);
-            this.dtpFilterFrom.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dtpFilterFrom.MinimumSize = new System.Drawing.Size(4, 30);
             this.dtpFilterFrom.Name = "dtpFilterFrom";
             this.dtpFilterFrom.Size = new System.Drawing.Size(266, 30);
             this.dtpFilterFrom.TabIndex = 39;
@@ -134,7 +134,7 @@
             // 
             this.dtpFilterTo.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFilterTo.Location = new System.Drawing.Point(336, 141);
-            this.dtpFilterTo.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dtpFilterTo.MinimumSize = new System.Drawing.Size(4, 30);
             this.dtpFilterTo.Name = "dtpFilterTo";
             this.dtpFilterTo.Size = new System.Drawing.Size(266, 30);
             this.dtpFilterTo.TabIndex = 40;
@@ -152,6 +152,7 @@
             this.btnFilter.TabIndex = 41;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // label2
             // 
@@ -190,9 +191,9 @@
             this.Text = "FormKelolaLaporan";
             this.Load += new System.EventHandler(this.FormKelolaLaporan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaksi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.foodxyzDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.foodxyzDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbltransaksiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.foodxyzDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.foodxyzDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

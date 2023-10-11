@@ -1,4 +1,5 @@
-﻿using FoodXYZ.Views;
+﻿using FoodXYZ.Controllers;
+using FoodXYZ.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,28 @@ namespace FoodXYZ
         [STAThread]
         static void Main()
         {
+            AuthController authController = new AuthController();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAdmin());
+            if (authController.isLoggedIn())
+            {
+                switch (authController.getUserLoggedIn().tipe_user)
+                {
+                    case "admin":
+                        Application.Run(new FormAdmin());
+                        break;
+                    case "gudang":
+                        Application.Run(new FormGudang());
+                        break;
+                    case "kasir":
+                        Application.Run(new FormKasir());
+                        break;
+                }
+            } else
+            {
+                Application.Run(new FormLogin());
+            }
         }
     }
 }

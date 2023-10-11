@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnKelolaLaporan = new System.Windows.Forms.Button();
             this.btnKelolaUser = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,16 @@
             this.panel1.Size = new System.Drawing.Size(274, 681);
             this.panel1.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(75, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 45);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Admin";
+            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -66,6 +76,7 @@
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnKelolaLaporan
             // 
@@ -115,16 +126,6 @@
             this.panelContainer.Size = new System.Drawing.Size(850, 681);
             this.panelContainer.TabIndex = 2;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(75, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 45);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Admin";
-            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,6 +133,7 @@
             this.ClientSize = new System.Drawing.Size(1124, 681);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMain";

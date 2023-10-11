@@ -70,8 +70,8 @@ namespace FoodXYZ.Views
         {
             cbTipeUser.Text = dgvUsers.Rows[e.RowIndex].Cells[1].Value.ToString();
             tbNama.Text = dgvUsers.Rows[e.RowIndex].Cells[2].Value.ToString();
-            tbTelpon.Text = dgvUsers.Rows[e.RowIndex].Cells[3].Value.ToString();
-            tbAlamat.Text = dgvUsers.Rows[e.RowIndex].Cells[4].Value.ToString();
+            tbAlamat.Text = dgvUsers.Rows[e.RowIndex].Cells[3].Value.ToString();
+            tbTelpon.Text = dgvUsers.Rows[e.RowIndex].Cells[4].Value.ToString();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

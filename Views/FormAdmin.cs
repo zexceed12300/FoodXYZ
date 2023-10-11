@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodXYZ.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace FoodXYZ.Views
 {
     public partial class FormAdmin : Form
     {
+        AuthController authController = new AuthController();
         public FormAdmin()
         {
             InitializeComponent();
@@ -51,6 +53,13 @@ namespace FoodXYZ.Views
             };
             this.panelContainer.Controls.Add(form);
             form.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            authController.logout();
+            this.Hide();
+            (new FormLogin()).Show();
         }
     }
 }
