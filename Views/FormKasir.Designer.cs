@@ -244,6 +244,7 @@
             this.btnReset.TabIndex = 73;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // dgvKeranjang
             // 
@@ -273,26 +274,31 @@
             // 
             // kode_barang
             // 
+            this.kode_barang.DataPropertyName = "kode_barang";
             this.kode_barang.HeaderText = "Kode barang";
             this.kode_barang.Name = "kode_barang";
             // 
             // nama_barang
             // 
+            this.nama_barang.DataPropertyName = "nama_barang";
             this.nama_barang.HeaderText = "Nama barang";
             this.nama_barang.Name = "nama_barang";
             // 
             // harga_satuan
             // 
+            this.harga_satuan.DataPropertyName = "harga_satuan";
             this.harga_satuan.HeaderText = "Harga satuan";
             this.harga_satuan.Name = "harga_satuan";
             // 
             // kuantitas
             // 
+            this.kuantitas.DataPropertyName = "kuantitas";
             this.kuantitas.HeaderText = "Kuantitas";
             this.kuantitas.Name = "kuantitas";
             // 
             // subtotal
             // 
+            this.subtotal.DataPropertyName = "subtotal";
             this.subtotal.HeaderText = "Subtotal";
             this.subtotal.Name = "subtotal";
             // 

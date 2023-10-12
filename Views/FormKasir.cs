@@ -1,6 +1,7 @@
 ﻿using FoodXYZ.Controllers;
 using FoodXYZ.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace FoodXYZ.Views
 
         AuthController authController = new AuthController();
         
-        List<keranjang> keranjang;
+        private List<keranjang> keranjangs = new List<keranjang>();
 
         public FormKasir()
         {
@@ -28,7 +29,8 @@ namespace FoodXYZ.Views
 
         private void queryKeranjang()
         {
-            dgvKeranjang.DataSource = keranjang;
+            dgvKeranjang.DataSource = null;
+            dgvKeranjang.DataSource = keranjangs;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -48,22 +50,23 @@ namespace FoodXYZ.Views
             {
                 cbPilihMenu.Items.Add(item.nama_barang);
             }
-
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
+
             var menu = context.tbl_barang.FirstOrDefault(x => x.nama_barang == cbPilihMenu.Text);
 
-            keranjang.Add(new keranjang
+            keranjangs.Add(new keranjang
             {
-                id_transaksi = keranjang.Count() + 1,
-                kode_barang = cbPilihMenu.Text,
-                nama_barang = menu.ToString(),
+                id_transaksi = keranjangs.Count() + 1,
+                kode_barang = cbPilihMenu.Text.ToString(),
+                nama_barang = menu.nama_barang.ToString(),
                 harga_satuan = Convert.ToInt32(menu.harga_satuan),
                 kuantitas = Convert.ToInt32(tbKuantitas.Text),
                 subtotal = Convert.ToInt32(menu.harga_satuan) * Convert.ToInt32(tbKuantitas.Text),
             });
+
             queryKeranjang();
         }
 
@@ -75,7 +78,13 @@ namespace FoodXYZ.Views
 
         private void tbKuantitas_TextChanged(object sender, EventArgs e)
         {
-            tbTotalHarga.Text = (Convert.ToInt32(tbHargaSatuan.Text) * Convert.ToInt32(tbKuantitas.Text)).ToString();
+            tbTotalHarga.Text = (Convert.ToInt32(tbHargaSatuan.Text) * Convert.ToInt32(tbKuantitas.Text != "" ? tbKuantitas.Text : "0")).ToString();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            keranjangs = new List<keranjang>();
+            queryKeranjang();
         }
     }
 }
