@@ -8,11 +8,11 @@ namespace FoodXYZ.Models
 {
     class keranjang
     {
-        public string id_transaksi { get; set; }
+        public int id_transaksi { get; set; }
         public string kode_barang { get; set; }
         public string nama_barang { get; set; }
-        public string harga_satuan { get; set; }
-        public string kuantitas { get; set; }
-        public string subtotal { get; set; }
+        public int harga_satuan { get; set; }
+        public int kuantitas { get; set; }
+        public int subtotal { get; set; }
     }
 }

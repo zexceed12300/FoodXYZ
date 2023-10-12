@@ -47,6 +47,11 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.dgvKeranjang = new System.Windows.Forms.DataGridView();
             this.idtransaksiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kode_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nama_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.harga_satuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kuantitas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbltransaksiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.foodxyzDataSet = new FoodXYZ.foodxyzDataSet();
             this.label4 = new System.Windows.Forms.Label();
@@ -123,6 +128,7 @@
             // tbTotalHarga
             // 
             this.tbTotalHarga.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbTotalHarga.Enabled = false;
             this.tbTotalHarga.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTotalHarga.Location = new System.Drawing.Point(791, 193);
             this.tbTotalHarga.Name = "tbTotalHarga";
@@ -137,10 +143,12 @@
             this.tbKuantitas.Name = "tbKuantitas";
             this.tbKuantitas.Size = new System.Drawing.Size(265, 28);
             this.tbKuantitas.TabIndex = 68;
+            this.tbKuantitas.TextChanged += new System.EventHandler(this.tbKuantitas_TextChanged);
             // 
             // tbHargaSatuan
             // 
             this.tbHargaSatuan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbHargaSatuan.Enabled = false;
             this.tbHargaSatuan.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbHargaSatuan.Location = new System.Drawing.Point(334, 193);
             this.tbHargaSatuan.Name = "tbHargaSatuan";
@@ -192,12 +200,11 @@
             this.cbPilihMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbPilihMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPilihMenu.FormattingEnabled = true;
-            this.cbPilihMenu.Items.AddRange(new object[] {
-            "botol"});
             this.cbPilihMenu.Location = new System.Drawing.Point(334, 124);
             this.cbPilihMenu.Name = "cbPilihMenu";
             this.cbPilihMenu.Size = new System.Drawing.Size(265, 29);
             this.cbPilihMenu.TabIndex = 62;
+            this.cbPilihMenu.TextChanged += new System.EventHandler(this.cbPilihMenu_TextChanged);
             // 
             // label8
             // 
@@ -245,7 +252,12 @@
             this.dgvKeranjang.ColumnHeadersHeight = 35;
             this.dgvKeranjang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvKeranjang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idtransaksiDataGridViewTextBoxColumn});
+            this.idtransaksiDataGridViewTextBoxColumn,
+            this.kode_barang,
+            this.nama_barang,
+            this.harga_satuan,
+            this.kuantitas,
+            this.subtotal});
             this.dgvKeranjang.DataSource = this.tbltransaksiBindingSource;
             this.dgvKeranjang.Location = new System.Drawing.Point(339, 337);
             this.dgvKeranjang.Name = "dgvKeranjang";
@@ -258,6 +270,31 @@
             this.idtransaksiDataGridViewTextBoxColumn.HeaderText = "ID Transaksi";
             this.idtransaksiDataGridViewTextBoxColumn.Name = "idtransaksiDataGridViewTextBoxColumn";
             this.idtransaksiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kode_barang
+            // 
+            this.kode_barang.HeaderText = "Kode barang";
+            this.kode_barang.Name = "kode_barang";
+            // 
+            // nama_barang
+            // 
+            this.nama_barang.HeaderText = "Nama barang";
+            this.nama_barang.Name = "nama_barang";
+            // 
+            // harga_satuan
+            // 
+            this.harga_satuan.HeaderText = "Harga satuan";
+            this.harga_satuan.Name = "harga_satuan";
+            // 
+            // kuantitas
+            // 
+            this.kuantitas.HeaderText = "Kuantitas";
+            this.kuantitas.Name = "kuantitas";
+            // 
+            // subtotal
+            // 
+            this.subtotal.HeaderText = "Subtotal";
+            this.subtotal.Name = "subtotal";
             // 
             // tbltransaksiBindingSource
             // 
@@ -395,11 +432,16 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idtransaksiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn notransaksiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tgltransaksiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalbayarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iduserDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idbarangDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtransaksiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kode_barang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nama_barang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn harga_satuan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kuantitas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
     }
 }
